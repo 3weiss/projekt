@@ -1,8 +1,27 @@
 
+/* LOGO */
+
+.logo {
+    z-index: 3;
+    float: right;
+    top: 0px padding-left : 10 px;
+    padding-right: 20px;
+    position: relative;
+}
+
+.logo img {
+    padding-top: 2px;
+    height: 80px;
+}
+
+.container {
+    width: 100%
+}
+
 #middleContent {
-    margin-right: 20%;
-    margin-left: 20%;
-    margin-top: 20%;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 5%;
 }
 
 #search {
@@ -11,7 +30,7 @@
 }
 
 #search input[type="text"] {
-    border: 1px solid #555555;
+    border: 1px solid #ccc;
     font: bold 12px Arial, Helvetica, Sans-serif;
     color: #bebebe;
     width: 60%;
@@ -19,11 +38,87 @@
     margin-right: 20%;
     margin-left: 20%;
     margin-bottom: 10px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
     text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+}
+
+.container-fluid {
+    height: 80px;
+}
+
+.navbar-nav {
+    padding-top: 30px;
+}
+
+#resultTableDiv {
+    border: 1px solid #555555 !important;
+    border-top: 1px solid #555555 !important;;
+}
+
+.navbar-default.navbar {
+    background-color: #B4BDC8 !important;
+    font-weight: bold;
+    color: black;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #FFF;
+}
+
+.menubar {
+    z-index: 0;
+
+}
+
+output {
+    font-size: 10px;
+}
+
+.leftContent {
+    margin-top: 5%;
+}
+
+.rightContent {
+    margin-top: 7%;
+    height: 10px;
+    background-color: #0e4776;
+}
+
+/* FILTER //////////////////////////////////////////////////////////////////////////////*/
+
+.setFilter {
+    font-size: 18px;
+}
+
+.state-icon {
+    left: -5px;
+}
+.list-group-item-primary {
+    color: rgb(255, 255, 255);
+    background-color: rgb(157, 170, 202);
+}
+
+.well .list-group {
+    margin-bottom: 0px;
+}
+
+.well {
+    min-height: 20px;
+    padding: 0px;
+    margin: 0px;
+    border: 1px solid #E3E3E3;
+    border-radius: 4px;
+}
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    z-index: 2;
+    color: #000;
+    font-weight: bold;
+    background-color: rgba(51, 122, 183, 0.35);
+    border-color: rgba(51, 122, 183, 0.35);
 }

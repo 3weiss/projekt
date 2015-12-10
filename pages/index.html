@@ -13,62 +13,214 @@
     <!-- tablesorter widgets (optional) -->
     <script type="text/javascript" src="../bower_components/tablesorter/dist/js/jquery.tablesorter.widgets.js"></script>
     <script type="text/javascript" src="../JS/tableSort.js"></script>
+    <script type="text/javascript" src="../JS/checkbox.js"></script>
+
 </head>
 <body>
 
-<div id="middleContent">
-    <div class="searchline">
-        <div class="searchbar" id="hallo">
-            <form id="search">
-                <input id="searchbar" type="text" placeholder="Search">
-
-            </form>
-        </div>
-    </div>
-    <div class="resultTable">
-        <table> <!-- bootstrap classes added by the uitheme widget -->
-            <thead>
-            <tr>
-                <th>Rating</th>
-                <th>Article</th>
-                <th>Timestamp</th>
-                <th>Word Score</th>
-             </tr>
-            </thead>
-            <tfoot>
-            <tr>
-                <th>Rating</th>
-                <th>Article</th>
-                <th>Timestamp</th>
-                <th>Word Score</th>
-            </tr>
-            <tr>
-                <th colspan="4" class="ts-pager form-horizontal">
-                    <button type="button" class="btn first"><span class="glyphicon glyphicon-step-backward"></span></button>
-                    <button type="button" class="btn prev"><span class="glyphicon glyphicon-backward"></span></button>
-                    <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
-                    <button type="button" class="btn next"><span class="glyphicon glyphicon-forward"></span></button>
-                    <button type="button" class="btn last"><span class="glyphicon glyphicon-step-forward"></span></button>
-                    <select class="pagesize input-mini" title="Select page size">
-                        <option selected="selected" value="10">10</option>
-                        <option value="20">20</option>
-                        <option value="30">30</option>
-                        <option value="40">40</option>
-                    </select>
-                    <select class="pagenum input-mini" title="Select page number"></select>
-                </th>
-            </tr>
-            </tfoot>
-            <tbody>
-            <tr><td>10</td><td>Bitcoin does stuff</td><td>06.06.2015</td><td>100</td>/tr>
-            <tr><td>8</td><td>Bitcoin is illegal</td><td>12.11.2015</td><td>90</td>/tr>
-            <tr><td>7</td><td>Bitcoin is great</td><td>12.11.2015</td><td>100</td>/tr>
-
-            </tbody>
-        </table>
-    </div>
+<div class="logo">
+    <img src="../img/cointrendLogo.png">
 </div>
 
+<div class="menubar">
+    <nav class="navbar-default navbar">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">News <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Charts</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="container">
+    <div class="row">
+
+        <div class="leftContent col-md-2">
+
+            <h3 class="text-center setFilter">Set Filter</h3>
+            <div class="well" style="overflow: auto;">
+                <h5 class="text-center setFilterFor">Timestamp</h5>
+                <ul class="list-group checked-list-box">
+                    <li class="list-group-item">Week</li>
+                    <li class="list-group-item" data-checked="true">Month</li>
+                    <li class="list-group-item">Year</li>
+                </ul>
+                <h5 class="text-center setFilterFor">Type</h5>
+                <ul class="list-group checked-list-box">
+                    <li class="list-group-item">Comments</li>
+                    <li class="list-group-item" data-checked="true">Thread</li>
+                    <li class="list-group-item">External Source</li>
+                </ul>
+                <h5 class="text-center setFilterFor">Source</h5>
+                <ul class="list-group checked-list-box">
+                    <li class="list-group-item" data-checked="true">Reddit</li>
+                    <li class="list-group-item">Facebook</li>
+                    <li class="list-group-item">Twitter</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+
+            <div id="middleContent" style="text-align: center">
+                <div class="searchline">
+                    <div class="searchbar" id="searchId">
+                        <form id="search">
+                            <input id="searchbar" type="text" placeholder="Search">
+                        </form>
+                    </div>
+                </div>
+                <div class="resultTableDiv">
+                    <table id="myTable" class="tablesorter-ice">
+                        <thead>
+                        <tr>
+                            <th>Rating</th>
+                            <th>Article</th>
+                            <th>Timestamp</th>
+                            <th>Relevance</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>10</td>
+                            <td>Bitcoin is...<br>
+                                <output>Lorem ipsum dolor</output>
+                            </td>
+                            <td>12.02.2015</td>
+                            <td>80</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Investing in Bitcoin<br>
+                                <output>
+                                    Lorem ue penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
+                                    quam
+                                    felis,
+                                    ultricies nec, pellentesque eu, pretium dolor
+                                </output>
+                            </td>
+                            <td>03.06.2015</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Amazon accepts Bitcoins<br>
+                                <output>
+                                    viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+                                    ultricies
+                                    nisi
+                                    vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maece
+                                </output>
+                            </td>
+                            <td>11.10.2015</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Bitcoin rising<br>
+                                <output>
+                                    um sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                    Donec
+                                    quam
+                                    felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis
+                                    enim.
+                                    Donec
+                                    pede justo, fringilla vel, aliquet nec, vulputate eget
+                                </output>
+                            </td>
+                            <td>05.02.2014</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Bug found<br>
+                                <output>
+                                    uat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat
+                                    a,
+                                    tellus.
+                                    Phasellus viverra nulla ut metus varius laore
+                                </output>
+                            </td>
+                            <td>12.08.2015</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Bitcoin is...<br>
+                                <output>Lorem ipsum dolor</output>
+                            </td>
+                            <td>12.02.2015</td>
+                            <td>80</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Investing in Bitcoin<br>
+                                <output>
+                                    Lorem ue penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
+                                    quam
+                                    felis,
+                                    ultricies nec, pellentesque eu, pretium dolor
+                                </output>
+                            </td>
+                            <td>03.06.2015</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Amazon accepts Bitcoins<br>
+                                <output>
+                                    viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+                                    ultricies
+                                    nisi
+                                    vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maece
+                                </output>
+                            </td>
+                            <td>11.10.2015</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Bitcoin rising<br>
+                                <output>
+                                    um sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                    Donec
+                                    quam
+                                    felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis
+                                    enim.
+                                    Donec
+                                    pede justo, fringilla vel, aliquet nec, vulputate eget
+                                </output>
+                            </td>
+                            <td>05.02.2014</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Bug found<br>
+                                <output>
+                                    uat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat
+                                    a,
+                                    tellus.
+                                    Phasellus viverra nulla ut metus varius laore
+                                </output>
+                            </td>
+                            <td>12.08.2015</td>
+                            <td>50</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="rightContent col-md-2">
+
+        </div>
+
+    </div>
+</div>
 
 </body>
 </html>
