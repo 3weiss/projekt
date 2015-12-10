@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../bootstrap-3.3.6-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../style/main.css">
+    <!-- choose a theme file -->
+    <link rel="stylesheet" href="../bower_components/tablesorter/dist/css/theme.ice.min.css">
+    <!-- load jQuery and tablesorter scripts -->
+    <script type="text/javascript" src="../src/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../bower_components/tablesorter/dist/js/jquery.tablesorter.js"></script>
+    <!-- tablesorter widgets (optional) -->
+    <script type="text/javascript" src="../bower_components/tablesorter/dist/js/jquery.tablesorter.widgets.js"></script>
+    <script type="text/javascript" src="../JS/tableSort.js"></script>
+</head>
+<body>
+
+<div id="middleContent">
+    <div class="searchline">
+        <div class="searchbar" id="hallo">
+            <form id="search">
+                <input id="searchbar" type="text" placeholder="Search">
+
+            </form>
+        </div>
+    </div>
+    <div class="resultTable">
+        <table> <!-- bootstrap classes added by the uitheme widget -->
+            <thead>
+            <tr>
+                <th>Rating</th>
+                <th>Article</th>
+                <th>Timestamp</th>
+                <th>Word Score</th>
+             </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <th>Rating</th>
+                <th>Article</th>
+                <th>Timestamp</th>
+                <th>Word Score</th>
+            </tr>
+            <tr>
+                <th colspan="4" class="ts-pager form-horizontal">
+                    <button type="button" class="btn first"><span class="glyphicon glyphicon-step-backward"></span></button>
+                    <button type="button" class="btn prev"><span class="glyphicon glyphicon-backward"></span></button>
+                    <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
+                    <button type="button" class="btn next"><span class="glyphicon glyphicon-forward"></span></button>
+                    <button type="button" class="btn last"><span class="glyphicon glyphicon-step-forward"></span></button>
+                    <select class="pagesize input-mini" title="Select page size">
+                        <option selected="selected" value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                    </select>
+                    <select class="pagenum input-mini" title="Select page number"></select>
+                </th>
+            </tr>
+            </tfoot>
+            <tbody>
+            <tr><td>10</td><td>Bitcoin does stuff</td><td>06.06.2015</td><td>100</td>/tr>
+            <tr><td>8</td><td>Bitcoin is illegal</td><td>12.11.2015</td><td>90</td>/tr>
+            <tr><td>7</td><td>Bitcoin is great</td><td>12.11.2015</td><td>100</td>/tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+</body>
+</html>
