@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="../bootstrap-3.3.6-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../style/main.css">
     <!-- choose a theme file -->
-    <link rel="stylesheet" href="../bower_components/tablesorter/dist/css/theme.ice.min.css">
+    <link rel="stylesheet" href="../src/bower_components/tablesorter/dist/css/theme.ice.min.css">
     <!-- load jQuery and tablesorter scripts -->
     <script type="text/javascript" src="../src/jquery-1.11.3.js"></script>
-    <script type="text/javascript" src="../bower_components/tablesorter/dist/js/jquery.tablesorter.js"></script>
+    <script type="text/javascript" src="../src/bower_components/tablesorter/dist/js/jquery.tablesorter.js"></script>
     <!-- tablesorter widgets (optional) -->
-    <script type="text/javascript" src="../bower_components/tablesorter/dist/js/jquery.tablesorter.widgets.js"></script>
+    <script type="text/javascript" src="../src/bower_components/tablesorter/dist/js/jquery.tablesorter.widgets.js"></script>
     <script type="text/javascript" src="../JS/tableSort.js"></script>
     <script type="text/javascript" src="../JS/checkbox.js"></script>
 
@@ -33,12 +33,35 @@
     </nav>
 </div>
 
+<div class="chartDiv">
+    <!-- TradingView Widget BEGIN -->
+    <script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
+    <script type="text/javascript">
+        new TradingView.widget({
+            "width": 220,
+            "height": 200,
+            "symbol": "FX:SPX500",
+            "interval": "D",
+            "timezone": "Etc/UTC",
+            "theme": "White",
+            "style": "1",
+            "locale": "en",
+            "toolbar_bg": "#f1f3f6",
+            "hide_top_toolbar": true,
+            "allow_symbol_change": true,
+            "save_image": false,
+            "hideideas": true
+        });
+    </script>
+    <!-- TradingView Widget END -->
+</div>
+
 <div class="container">
     <div class="row">
 
         <div class="leftContent col-md-2">
 
-            <h3 class="text-center setFilter">Set Filter</h3>
+            <h3 class="text-center middleHeadline">Set Filter</h3>
             <div class="well" style="overflow: auto;">
                 <h5 class="text-center setFilterFor">Timestamp</h5>
                 <ul class="list-group checked-list-box">
@@ -216,7 +239,19 @@
 
 
         <div class="rightContent col-md-2">
-
+            <h3 class="text-center middleHeadline">New Events</h3>
+            <ul class="list-group">
+                <li class="list-group-item"><a>Cras justo odio</a></li>
+                <li class="list-group-item"><a>Dapibus ac facilisis in</a></li>
+                <li class="list-group-item"><a>Morbi leo risus</a></li>
+                <li class="list-group-item"><a>Porta ac consectetur ac</a></li>
+                <li class="list-group-item"><a>Vestibulum at eros</a></li>
+                <li class="list-group-item"><a>Cras justo odio</a></li>
+                <li class="list-group-item"><a>Dapibus ac facilisis in</a></li>
+                <li class="list-group-item"><a>Morbi leo risus</a></li>
+                <li class="list-group-item"><a>Porta ac consectetur ac</a></li>
+                <li class="list-group-item"><a>Vestibulum at eros</a></li>
+            </ul>
         </div>
 
     </div>
