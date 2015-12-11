@@ -12,6 +12,7 @@
 .logo img {
     padding-top: 2px;
     height: 80px;
+    width: 250px;
 }
 
 /* MENU //////////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -57,18 +58,17 @@
 
 .container {
     width: 100%;
-    margin-top: 5%;
 }
 
 #middleContent {
     margin-right: 1%;
     margin-left: 1%;
-    margin-top: 5%;
 }
 
 
 .container-fluid {
     height: 80px;
+    padding-left: 19%;
 }
 
 .navbar-nav {
@@ -94,13 +94,15 @@ output {
 
 
 .leftContent {
-    margin-top: 5%;
+    margin-top: 1%;
 }
 
 .chartDiv {
     float: right;
     margin-right: 2%;
 }
+
+
 
 .rightContent {
     margin-top: 0%;

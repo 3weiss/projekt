@@ -11,7 +11,8 @@
     <script type="text/javascript" src="../src/jquery-1.11.3.js"></script>
     <script type="text/javascript" src="../src/bower_components/tablesorter/dist/js/jquery.tablesorter.js"></script>
     <!-- tablesorter widgets (optional) -->
-    <script type="text/javascript" src="../src/bower_components/tablesorter/dist/js/jquery.tablesorter.widgets.js"></script>
+    <script type="text/javascript"
+            src="../src/bower_components/tablesorter/dist/js/jquery.tablesorter.widgets.js"></script>
     <script type="text/javascript" src="../JS/tableSort.js"></script>
     <script type="text/javascript" src="../JS/checkbox.js"></script>
 
@@ -19,7 +20,7 @@
 <body>
 
 <div class="logo">
-    <img src="../img/cointrendLogo.png">
+
 </div>
 
 <div class="menubar">
@@ -33,27 +34,30 @@
     </nav>
 </div>
 
-<div class="chartDiv">
-    <!-- TradingView Widget BEGIN -->
-    <script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
-    <script type="text/javascript">
-        new TradingView.widget({
-            "width": 220,
-            "height": 200,
-            "symbol": "FX:SPX500",
-            "interval": "D",
-            "timezone": "Etc/UTC",
-            "theme": "White",
-            "style": "1",
-            "locale": "en",
-            "toolbar_bg": "#f1f3f6",
-            "hide_top_toolbar": true,
-            "allow_symbol_change": true,
-            "save_image": false,
-            "hideideas": true
-        });
-    </script>
-    <!-- TradingView Widget END -->
+<div>
+    <img src="../img/cointrendLogo.png">
+    <div class="chartDiv">
+        <!-- TradingView Widget BEGIN -->
+        <script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
+        <script type="text/javascript">
+            new TradingView.widget({
+                "width": 220,
+                "height": 200,
+                "symbol": "FX:SPX500",
+                "interval": "D",
+                "timezone": "Etc/UTC",
+                "theme": "White",
+                "style": "1",
+                "locale": "en",
+                "toolbar_bg": "#f1f3f6",
+                "hide_top_toolbar": true,
+                "allow_symbol_change": true,
+                "save_image": false,
+                "hideideas": true
+            });
+        </script>
+        <!-- TradingView Widget END -->
+    </div>
 </div>
 
 <div class="container">
@@ -62,6 +66,7 @@
         <div class="leftContent col-md-2">
 
             <h3 class="text-center middleHeadline">Set Filter</h3>
+
             <div class="well" style="overflow: auto;">
                 <h5 class="text-center setFilterFor">Timestamp</h5>
                 <ul class="list-group checked-list-box">
