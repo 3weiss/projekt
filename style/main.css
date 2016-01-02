@@ -61,8 +61,8 @@
 }
 
 #middleContent {
-    margin-right: 1%;
-    margin-left: 1%;
+    margin-right: 5%;
+    margin-left: 5%;
 }
 
 
@@ -75,9 +75,11 @@
     padding-top: 30px;
 }
 
+
 #resultTableDiv {
     border: 1px solid #555555 !important;
-    border-top: 1px solid #555555 !important;;
+    border-top: 1px solid #555555 !important;
+    text-align: center;;
 }
 
 .navbar-default.navbar {
@@ -93,9 +95,13 @@ output {
 /* Right Content ////////////////////////////////////////////////////////////////////////////////////////////*/
 
 
-.leftContent {
-    margin-top: 1%;
+#leftContent {
+    margin-left: 1%;
+    margin-right: 1%;
 }
+
+
+
 
 .chartDiv {
     float: right;
@@ -140,4 +146,35 @@ output {
     font-weight: bold;
     background-color: rgba(51, 122, 183, 0.35);
     border-color: rgba(51, 122, 183, 0.35);
+}
+
+#selectField{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    height: 30px;
+    width: 200px;
+    color:black;
+    background-color: #ff8c00;
+    margin-top:1%;
+}
+#selectField2{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    height: 30px;
+    width: 200px;
+    color:black;
+    background-color: #ff8c00;
+    margin-top:1%;
+}
+.odd{
+    background:#0073ff;
+}
+.even{
+    background:#0073ff;
 }

@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="../bootstrap-3.3.6-dist/css/bootstrap.css">
+    <title>CointrendTestFrontend</title>
+    <link rel="stylesheet" href="../src/bootstrap-3.3.6-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../style/main.css">
     <!-- choose a theme file -->
     <link rel="stylesheet" href="../src/bower_components/tablesorter/dist/css/theme.ice.min.css">
@@ -15,6 +15,8 @@
             src="../src/bower_components/tablesorter/dist/js/jquery.tablesorter.widgets.js"></script>
     <script type="text/javascript" src="../JS/tableSort.js"></script>
     <script type="text/javascript" src="../JS/checkbox.js"></script>
+    <script type="text/javascript" src="../JS/filter.js"></script>
+    <script type="text/javascript" src="../JS/filter2.js"></script>
 
 </head>
 <body>
@@ -36,59 +38,15 @@
 
 <div>
     <img src="../img/cointrendLogo.png">
-    <div class="chartDiv">
-        <!-- TradingView Widget BEGIN -->
-        <script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
-        <script type="text/javascript">
-            new TradingView.widget({
-                "width": 220,
-                "height": 200,
-                "symbol": "FX:SPX500",
-                "interval": "D",
-                "timezone": "Etc/UTC",
-                "theme": "White",
-                "style": "1",
-                "locale": "en",
-                "toolbar_bg": "#f1f3f6",
-                "hide_top_toolbar": true,
-                "allow_symbol_change": true,
-                "save_image": false,
-                "hideideas": true
-            });
-        </script>
-        <!-- TradingView Widget END -->
-    </div>
+
 </div>
+
+
+
+
 
 <div class="container">
     <div class="row">
-
-        <div class="leftContent col-md-2">
-
-            <h3 class="text-center middleHeadline">Set Filter</h3>
-
-            <div class="well" style="overflow: auto;">
-                <h5 class="text-center setFilterFor">Timestamp</h5>
-                <ul class="list-group checked-list-box">
-                    <li class="list-group-item">Week</li>
-                    <li class="list-group-item" data-checked="true">Month</li>
-                    <li class="list-group-item">Year</li>
-                </ul>
-                <h5 class="text-center setFilterFor">Type</h5>
-                <ul class="list-group checked-list-box">
-                    <li class="list-group-item">Comments</li>
-                    <li class="list-group-item" data-checked="true">Thread</li>
-                    <li class="list-group-item">External Source</li>
-                </ul>
-                <h5 class="text-center setFilterFor">Source</h5>
-                <ul class="list-group checked-list-box">
-                    <li class="list-group-item" data-checked="true">Reddit</li>
-                    <li class="list-group-item">Facebook</li>
-                    <li class="list-group-item">Twitter</li>
-                </ul>
-            </div>
-        </div>
-
         <div class="col-md-8">
 
             <div id="middleContent" style="text-align: center">
@@ -100,25 +58,37 @@
                     </div>
                 </div>
                 <div class="resultTableDiv">
+                    Filter nach der Quelle
+                    <select id="selectField">
+                        <option value="All" selected>All</option>
+                        <option value="Twitter">Twitter</option>
+                        <option value="Reddit">Reddit</option>
+                        <option value="Facebook">Facebook</option>
+                    </select>
+
+                    Filter nach der Art
+                    <select id="selectField2">
+                        <option value="All" selected>All</option>
+                        <option value="Kommentar">Kommentar</option>
+                        <option value="Tweet">Tweet</option>
+                        <option value="Post">Post</option>
+                    </select>
+
                     <table id="myTable" class="tablesorter-ice">
                         <thead>
                         <tr>
+                            <th>Source</th>
                             <th>Rating</th>
                             <th>Article</th>
                             <th>Timestamp</th>
                             <th>Relevance</th>
                         </tr>
                         </thead>
+
                         <tbody>
-                        <tr>
-                            <td>10</td>
-                            <td>Bitcoin is...<br>
-                                <output>Lorem ipsum dolor</output>
-                            </td>
-                            <td>12.02.2015</td>
-                            <td>80</td>
-                        </tr>
-                        <tr>
+
+                        <tr position="Reddit" position2="Kommentar">
+                            <td>Reddit</td>
                             <td>10</td>
                             <td>Investing in Bitcoin<br>
                                 <output>
@@ -131,7 +101,8 @@
                             <td>03.06.2015</td>
                             <td>20</td>
                         </tr>
-                        <tr>
+                        <tr position="Twitter" position2="Tweet">
+                            <td>Twitter</td>
                             <td>8</td>
                             <td>Amazon accepts Bitcoins<br>
                                 <output>
@@ -144,7 +115,8 @@
                             <td>11.10.2015</td>
                             <td>10</td>
                         </tr>
-                        <tr>
+                        <tr position="Twitter" position2="Tweet">
+                            <td>Twitter</td>
                             <td>5</td>
                             <td>Bitcoin rising<br>
                                 <output>
@@ -160,7 +132,8 @@
                             <td>05.02.2014</td>
                             <td>45</td>
                         </tr>
-                        <tr>
+                        <tr position="Facebook" position2="Post">
+                            <td>Facebook</td>
                             <td>2</td>
                             <td>Bug found<br>
                                 <output>
@@ -173,7 +146,8 @@
                             <td>12.08.2015</td>
                             <td>50</td>
                         </tr>
-                        <tr>
+                        <tr position="Twitter" position2="Tweet">
+                            <td>Twitter</td>
                             <td>2</td>
                             <td>Bitcoin is...<br>
                                 <output>Lorem ipsum dolor</output>
@@ -181,7 +155,8 @@
                             <td>12.02.2015</td>
                             <td>80</td>
                         </tr>
-                        <tr>
+                        <tr position="Reddit" position2="Kommentar">
+                            <td>Reddit</td>
                             <td>8</td>
                             <td>Investing in Bitcoin<br>
                                 <output>
@@ -194,7 +169,8 @@
                             <td>03.06.2015</td>
                             <td>20</td>
                         </tr>
-                        <tr>
+                        <tr position="Reddit" position2="Kommentar">
+                            <td>Reddit</td>
                             <td>6</td>
                             <td>Amazon accepts Bitcoins<br>
                                 <output>
@@ -207,7 +183,8 @@
                             <td>11.10.2015</td>
                             <td>10</td>
                         </tr>
-                        <tr>
+                        <tr position="Facebook" position2="Post">
+                            <td>Facebook</td>
                             <td>5</td>
                             <td>Bitcoin rising<br>
                                 <output>
@@ -223,7 +200,8 @@
                             <td>05.02.2014</td>
                             <td>45</td>
                         </tr>
-                        <tr>
+                        <tr position="Reddit" position2="Kommentar">
+                            <td>Reddit</td>
                             <td>5</td>
                             <td>Bug found<br>
                                 <output>
@@ -241,6 +219,7 @@
                 </div>
             </div>
         </div>
+
 
 
         <div class="rightContent col-md-2">
